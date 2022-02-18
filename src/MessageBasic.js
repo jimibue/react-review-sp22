@@ -1,14 +1,17 @@
 import {useState} from 'react'
+import { getAlphabet } from './helpers'
 const MessageBasic = ()=>{
  
+    // useState function, if this confusing 
+    // spend sometime reading up on useState
     const [message, setMessage] = useState('')
+
     const handleClicked = (char) => {
-        console.log(`${char} clicked`)
         setMessage(message + char)
     }
-    
-    const renderAlphabet = ()=>{
-        let alp = ['a','b','c'] //=> <p key='1'>a</p>,<p key='2'>b</p>,<p key='3'>c</p>]
+
+    const renderKeyboard = ()=>{
+        let alp = getAlphabet()
         let jsx = alp.map(char=>{
             return  <button key={char} onClick={()=> handleClicked(char)}>{char}</button>
         })
@@ -17,9 +20,8 @@ const MessageBasic = ()=>{
 
     return (
        <div>
-           <h1>MessageBasic</h1>
            <p>{message}</p>
-           {renderAlphabet()}
+           {renderKeyboard()}
        </div> 
     )
 }
