@@ -10,7 +10,9 @@ function App() {
     <div>
       <h1>App HERE YO</h1>
       <DemoContainer header='FlashCard'>
-        <FlashCard />
+        <FlashCard question='What is 1+1' answer='2' color='green'/>
+        <FlashCard question='What is 2+2' answer='4'/>
+        <FlashCard question='What is 4+4' answer='8' color='orange'/>
       </DemoContainer>
 
       <DemoContainer header='Message'>
