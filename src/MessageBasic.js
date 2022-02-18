@@ -10,6 +10,9 @@ const MessageBasic = ()=>{
         setMessage(message + char)
     }
 
+    // this function creates (from getAlphabet) a arr of letters ['a','b'..'z']
+    // maps over them
+    // and returns [<button key={'a'} onClick={()=> handleClicked('a')}>{'a'}</button>....<button key={'z} onClick={()=> handleClicked('z')}>{z}</button>]
     const renderKeyboard = ()=>{
         // get ['a','b'..'z'] and store to alp
         let alp = getAlphabet()
@@ -21,6 +24,8 @@ const MessageBasic = ()=>{
         let jsx = alp.map(char=>{
             return  <button key={char} onClick={()=> handleClicked(char)}>{char}</button>
         })
+
+        console.log('jsx var here: about to return it', jsx)
         return jsx
     }
 
